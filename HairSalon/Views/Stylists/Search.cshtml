@@ -4,11 +4,14 @@
 <h1>Salon</h1>
 <h2>Search Stylists</h2>
 
+@model HairSalon.Models.HairSalonContext
+
 <!-- Search Form -->
-<form action="/Search" method="post">
+
+<form action="/Stylists/SearchResults" method="post">
   <p>
-    <!-- From ASP.Net tutorial -->
-    <input type="text" asp-for="SearchString" />
-    <input type="submit" value="Search" />
+    <label for="searchTerm">Search Stylists</label>
+    <input id="searchTerm" name="searchTerm" type="text">
+    <button type="submit">Search</button>
   </p>
 </form>
