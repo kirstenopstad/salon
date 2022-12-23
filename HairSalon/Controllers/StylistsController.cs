@@ -49,11 +49,22 @@ namespace HairSalon.Controllers
       return View(thisStylist);
     }
 
+
+    public ActionResult Search()
+    {
+      return View();
+    }
+
+    [HttpPost, ActionName("SearchResult")]
     public ActionResult Search(string searchTerm)
     {
       List<Stylist>  searchResults = _db.Stylists
                                         .Include(stylist => stylist.Clients)
-                                        .Where( stylist => stylist.Name )
+                                        .Where(stylist => stylist.Name.Contains(searchTerm) == true)
+                                        .ToList();
+      return View(searchResults);
     }
+
+
   }
 }
