@@ -3,7 +3,7 @@ using HairSalon.Models;
 
 namespace HairSalon.Controllers
 {
-  public class HomeController : Controllers
+  public class HomeController : Controller
   {
     // Routes
     public ActionResult Index()
