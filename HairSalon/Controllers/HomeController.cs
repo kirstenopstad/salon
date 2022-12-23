@@ -1,13 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
-// using ProjectName.Models;
+using HairSalon.Models;
 
-namespace ProjectName.Controllers
+namespace HairSalon.Controllers
 {
   public class HomeController : Controllers
   {
     // Routes
-    // [HttpGet(")]
-    // [HttpPost("")]
+    public ActionResult Index()
+    {
+      return View();
+    }
 
   }
 }
