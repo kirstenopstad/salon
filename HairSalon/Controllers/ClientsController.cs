@@ -30,8 +30,18 @@ namespace HairSalon.Controllers
     {
       // add viewbag to pass in select options
       // SelectList(data that will populate <option> elements, value, displayed text)
-      ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name") ;
+      ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
       return View();
+    }
+
+    [HttpPost]
+    public ActionResult Create(Client client)
+    {
+      // save to entity
+      _db.Clients.Add(client);
+      // save to db
+      _db.SaveChanges();
+      return RedirectToAction("Index");
     }
   }
 }
