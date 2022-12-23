@@ -4,8 +4,8 @@ namespace HairSalon.Models
 {
   public class HairSalonContext : DbContext
   {
-    public DBSet<Client> Clients { get; set; }
-    public DBSet<Stylist> Stylist { get; set; }
+    public DbSet<Client> Clients { get; set; }
+    public DbSet<Stylist> Stylist { get; set; }
 
     public HairSalonContext(DbContextOptions options) : base(options) { }
   }
