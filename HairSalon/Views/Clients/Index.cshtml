@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+<h1>Salon</h1>
+<h2>Clients</h2>
+
+@using HairSalon.Models
+
+<!-- List Clients --> 
+@if (@Model.Count == 0)
+{
+  <p>There are no client that have been added to the system yet!</p>
+}
+<ul>
+@foreach (Client client in Model)
+{
+  <li>@client.FirstName @client.LastName</li>
+}
+</ul>
+
+<!-- Navigation --> 
