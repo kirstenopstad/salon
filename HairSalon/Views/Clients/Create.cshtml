@@ -5,10 +5,13 @@
 <h2>Add New Client</h2>
 
 @using HairSalon.Models
-<!-- Data --> 
-@model HairSalon.Models.Client;
-
+@model HairSalon.Models.Client
+<!-- Data -->
 <!-- Form --> 
+<p>NOTE: Clients may not be added without a stylist association. If there are no stylists in drop-down list, add stylist before proceeding.</p>
+<p>@Html.ActionLink("Add New Stylist", "Create", "Stylists")</p>
+
+
 @using (@Html.BeginForm())
 {
   <!-- First Name -->
@@ -33,6 +36,5 @@
   <br>
   <!-- Submit -->
   <input type="submit" value="Add Client"/> 
-
 }
 <!-- Navigation --> 
