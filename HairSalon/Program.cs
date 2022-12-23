@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using ProjectName.Models;
+using HairSalon.Models;
 
-namespace ProjectName
+namespace HairSalon
 {
   class Program
   {
@@ -13,8 +13,8 @@ namespace ProjectName
 
       builder.Services.AddControllersWithViews();
 
-      // add EF Core as a service to our To Do List app, specify ToDoListContext as the type
-      builder.Services.AddDbContext<ToDoListContext>(
+      // add EF Core as a service to ourt app, specify context by name
+      builder.Services.AddDbContext<HairSalonContext>(
                         dbContextOptions => dbContextOptions
                           .UseMySql(
                             builder.Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(builder.Configuration["ConnectionStrings:DefaultConnection"]
