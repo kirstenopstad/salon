@@ -59,7 +59,7 @@ Your code will be reviewed for the following objectives:
 The prompt’s required functionality and baseline project requirements are in place by the deadline.
 
 
-<!-- ![Screenshot of Databases](imagelink) -->
+![Screenshot of Databases](HairSalon/wwwroot/images/SalonSchemas.png)
 
 <!-- [Link to operational site](http://www.kirstenopstad.github.com/<REPOSITORY NAME>) -->
 
