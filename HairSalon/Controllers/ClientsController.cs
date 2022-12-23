@@ -51,5 +51,6 @@ namespace HairSalon.Controllers
                              .FirstOrDefault(client => client.ClientId == id);
       return View(thisClient);
     }
+
   }
 }

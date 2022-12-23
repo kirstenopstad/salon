@@ -51,9 +51,9 @@ namespace HairSalon.Controllers
 
     public ActionResult Search(string searchTerm)
     {
-      Stylist  searchResults = _db.Stylists
-                                  .Include(stylist => stylist.Clients)
-                                  .ToList()
+      List<Stylist>  searchResults = _db.Stylists
+                                        .Include(stylist => stylist.Clients)
+                                        .Where( stylist => stylist.Name )
     }
   }
 }
