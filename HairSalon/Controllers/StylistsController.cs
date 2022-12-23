@@ -19,6 +19,10 @@ namespace HairSalon.Controllers
       _db = db;
     }
 
+    // from tutorial: https://learn.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/search?view=aspnetcore-6.0
+    [BindProperty(SupportsGet = true)]
+    public string ? SearchString { get; set; }
+
     // routes
     public ActionResult Index()
     {
@@ -55,15 +59,13 @@ namespace HairSalon.Controllers
       return View();
     }
 
-    [HttpPost]
-    public ActionResult Search(string searchTerm)
+    [HttpPost("?={SearchString}")]
+    public ActionResult SearchResults()
     {
       List<Stylist>  searchResults = _db.Stylists
-                                        .Include(stylist => stylist.Clients)
-                                        .Where(stylist => stylist.Name.Contains(searchTerm) == true)
+                                        .Where(stylist => stylist.Name.Contains(SearchString) == true)
                                         .ToList();
       return RedirectToAction("SearchResults", searchResults);
     }
-
   }
 }

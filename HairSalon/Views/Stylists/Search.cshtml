@@ -6,13 +6,9 @@
 
 <!-- Search Form -->
 <form action="/Search" method="post">
-  <label for="searchTerm">Search</label>
-  <input id="searchTerm" name="searchTerm" type="text">
-  <button type="submit">Search</button>
+  <p>
+    <!-- From ASP.Net tutorial -->
+    <input type="text" asp-for="SearchString" />
+    <input type="submit" value="Search" />
+  </p>
 </form>
-
-@* <a href='/records/@record.Id'>
-@Html.LabelFor(model => model.searchTerm)
-@Html.TextBoxFor(.searchTerm) *@
-<!-- Submit -->
-@* <input type="submit" value="Search Stylists" /> *@
