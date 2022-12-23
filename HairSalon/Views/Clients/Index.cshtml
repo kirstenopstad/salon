@@ -15,10 +15,12 @@
 @foreach (Client client in Model)
 {
   <li>
-    @client.FirstName @client.LastName 
-    @Html.ActionLink("View Client Details", "Details", new { id = client.ClientId })
+     
+    @Html.ActionLink($"{client.FirstName} {client.LastName}", "Details", new { id = client.ClientId })
   </li>
 }
 </ul>
 
 <!-- Navigation --> 
+<p>@Html.ActionLink("Add New Client", "Create")</p>
+<p>@Html.ActionLink("Back to Main", "Index", "Home")</p>
