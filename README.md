@@ -25,8 +25,8 @@ You've been referred by Pierre to his friend Claire who is the owner of a hair s
 #### User Stories
   * As the salon owner, I need to be able to see a list of all stylists. ✅
   * As the salon owner, I need to be able to select a stylist, see their details, and see a list of all clients that belong to that stylist. ✅
-  * As the salon owner, I need to add new stylists to our system when they are hired.
-  * As the salon owner, I need to be able to add new clients to a specific stylist. I should not be able to add a client if no stylists have been added.
+  * As the salon owner, I need to add new stylists to our system when they are hired. ✅
+  * As the salon owner, I need to be able to add new clients to a specific stylist. I should not be able to add a client if no stylists have been added. ✅
 
 ### Outline
 
@@ -36,9 +36,9 @@ You've been referred by Pierre to his friend Claire who is the owner of a hair s
   - Create [UPDATE] ✅
 
 2. Clients 
-  - Index [READ]
-  - Details [READ]
-  - Create [UPDATE]
+  - Index [READ] ✅
+  - Details [READ] ✅
+  - Create [UPDATE] ✅
 
 #### Naming
 Note: You must follow the naming conventions for your project. Projects that do not follow these conventions will not be reviewed and will be returned not passing.
@@ -76,7 +76,7 @@ The prompt’s required functionality and baseline project requirements are in p
 <!-- [Link to operational site](http://www.kirstenopstad.github.com/<REPOSITORY NAME>) -->
 
 ### Goals
-1. Meet MVP
+1. Meet MVP ✅
 2. Include a form where employees may search for a stylist by name. 
 3. Display a list of all results.
 Include a form where employees may also search for a client by name. Display a list of all results.
