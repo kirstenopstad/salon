@@ -1,8 +1,8 @@
-# Project Name
+# Hair Salon
 
 #### By Kirsten Opstad
 
-#### A template for a C# ASP.Net Core 6 MVC program 
+#### An MVC web app to manage stylists and clients for a fictional hair salon
 
 ## Technologies Used
 
@@ -18,6 +18,46 @@
 ## Description
 
 ### Objectives (MVP)
+
+#### Eau Claire's Salon
+You've been referred by Pierre to his friend Claire who is the owner of a hair salon called Eau Claire's Salon. She has contracted you out to create an MVC web application to help her manage her employees (stylists) and their clients. Claire should be able to add a list of stylists working at the salon, and for each stylist, add clients who see that stylist. The stylists have specific specialties, so each client can only see (belong to) a single stylist.
+
+#### User Stories
+  As the salon owner, I need to be able to see a list of all stylists.
+  As the salon owner, I need to be able to select a stylist, see their details, and see a list of all clients that belong to that stylist.
+  As the salon owner, I need to add new stylists to our system when they are hired.
+  As the salon owner, I need to be able to add new clients to a specific stylist. I should not be able to add a client if no stylists have been added.
+
+#### Naming
+Note: You must follow the naming conventions for your project. Projects that do not follow these conventions will not be reviewed and will be returned not passing.
+
+Use your first name and last name to name your database in the following way:
+
+Production Database: first_last
+Use the following name for your directory:
+
+Main Project Folder: HairSalon
+
+#### Exported Database
+When you're finished, export the .sql file holding the information from your production database.
+
+Please commit this file with your project in the top level of your solution folder. Again, use your first and last name as the file name following the pattern below:
+
+Production Database: first_last.sql
+If you name your database, project folder, or .sql file incorrectly your project will be sent back to you immediately without being graded.
+
+#### Additional Objectives
+Your code will be reviewed for the following objectives:
+
+* Do the database table and column names follow proper naming conventions?
+* Do the project folder and exported database follow the specific naming requirements for this project?
+* Is there a one-to-many relationship set up correctly in the database?
+* Is CREATE functionality included for one class and is CREATE and VIEW functionality included for the other class?
+* Is EF Core used for communication with the database?
+* Build files and sensitive information are included in .gitignore file and is not to be tracked by Git, and includes instructions on how to create the appsettings.json and set up the project.
+* Project is in a polished, portfolio-quality state.
+The prompt’s required functionality and baseline project requirements are in place by the deadline.
+
 
 <!-- ![Screenshot of Databases](imagelink) -->
 
@@ -35,23 +75,23 @@
 2. Open MySQLWorkbench [Click here for instructions to download]
 3. Under Administration Tab, select Data Import/Restore
   * Select 'Import from Self Contained File'
-  * Select ../animal-shelter-export.sql from the AnimalShelter directory
+  * Select ../kirsten_opstad.sql from the project root directory
   <!-- ![Screenshot of MySQL Import Settings](INSERT SCREENSHOT LINK) -->
-  * Select "New..." and set new schema name to **PROJECT-NAME**
+  * Select "New..." and set new schema name to **kirsten_opstad**
   * Select 'Start Import'
-4. You should now have a copy of the **PROJECT-NAME** database on your machine.
+4. You should now have a copy of the **kirsten_opstad** database on your machine.
 
 #### Open project
-1. Navigate to the `Project Name` directory.
+1. Navigate to the **HairSalon** directory.
 2. Create a file named `appsettings.json` with the following code. Be sure to update the Default Connection to your MySQL credentials.
 ```
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost;Port=3306;database=[PROJECT-NAME];uid=[YOUR-USERNAME-HERE];pwd=[YOUR-PASSWORD-HERE];",
+    "DefaultConnection": "Server=localhost;Port=3306;database=kirsten_opstad;uid=[YOUR-USERNAME-HERE];pwd=[YOUR-PASSWORD-HERE];"
   }
 }
 ```
-3. Install dependencies within the `Project Name` directory
+3. Install dependencies within the **HairSalon** directory
 ```
 $ dotnet restore
 ````
