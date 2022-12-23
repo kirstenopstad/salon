@@ -1,0 +1,27 @@
+@{
+  Layout = "_Layout";
+}
+<h1>Salon</h1>
+<h2>Stylist Details</h2>
+
+@using HairSalon.Models
+@model HairSalon.Models.Stylist
+
+<!-- Name -->
+<h3>@Model.Name</h3>
+<!-- Specialty -->
+<p>Specialty: @Model.Specialty</p>
+<!-- Bio -->
+<p>Bio: @Model.Bio</p>
+
+<h3>Client List</h3>
+@if (@Model.Clients.Count == 0)
+{
+  <p>Stylist has no clients added in system yet!</p>
+}
+<ul>
+@foreach (Client client in Model.Clients)
+{
+  <li>@client.FirstName @client.LastName | @client.Phone | @client.Email</li>
+}
+</ul>
