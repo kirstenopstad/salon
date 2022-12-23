@@ -14,7 +14,10 @@
 <ul>
 @foreach (Client client in Model)
 {
-  <li>@client.FirstName @client.LastName</li>
+  <li>
+    @client.FirstName @client.LastName 
+    @Html.ActionLink("View Client Details", "Details", new { id = client.ClientId })
+  </li>
 }
 </ul>
 
