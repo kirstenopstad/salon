@@ -23,10 +23,22 @@
 You've been referred by Pierre to his friend Claire who is the owner of a hair salon called Eau Claire's Salon. She has contracted you out to create an MVC web application to help her manage her employees (stylists) and their clients. Claire should be able to add a list of stylists working at the salon, and for each stylist, add clients who see that stylist. The stylists have specific specialties, so each client can only see (belong to) a single stylist.
 
 #### User Stories
-  As the salon owner, I need to be able to see a list of all stylists.
-  As the salon owner, I need to be able to select a stylist, see their details, and see a list of all clients that belong to that stylist.
-  As the salon owner, I need to add new stylists to our system when they are hired.
-  As the salon owner, I need to be able to add new clients to a specific stylist. I should not be able to add a client if no stylists have been added.
+  * As the salon owner, I need to be able to see a list of all stylists.
+  * As the salon owner, I need to be able to select a stylist, see their details, and see a list of all clients that belong to that stylist.
+  * As the salon owner, I need to add new stylists to our system when they are hired.
+  * As the salon owner, I need to be able to add new clients to a specific stylist. I should not be able to add a client if no stylists have been added.
+
+### Outline
+
+1. Stylists 
+  - Index [READ]
+  - Details [READ]
+  - Create [UPDATE]
+
+2. Clients 
+  - Index [READ]
+  - Details [READ]
+  - Create [UPDATE]
 
 #### Naming
 Note: You must follow the naming conventions for your project. Projects that do not follow these conventions will not be reviewed and will be returned not passing.
