@@ -77,9 +77,9 @@ The prompt’s required functionality and baseline project requirements are in p
 
 ### Goals
 1. Meet MVP ✅
-2. Include a form where employees may search for a stylist by name. 
-3. Display a list of all results.
-Include a form where employees may also search for a client by name. Display a list of all results.
+2. Include a form where employees may search for a stylist by name. ✅
+3. Display a list of all results. ✅
+Include a form where employees may also search for a client by name. Display a list of all results. ✅
 4. Add a feature for adding an appointment to a client.
 5. Add a feature for adding an appointment to a stylist. Add a check to make sure the stylist does not have any conflicting appointments.
 6. Add a feature for keeping track of how much each stylist was paid for each appointment.
