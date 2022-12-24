@@ -2,6 +2,22 @@
   Layout = "_Layout";
 }
 <h1>Salon</h1>
+<!-- Search Stylists -->
+<form action="/Stylists/SearchResults" method="post">
+  <p>
+    <label for="searchTerm">Search Stylists</label>
+    <input id="searchTerm" name="searchTerm" type="text">
+    <button type="submit">Search</button>
+  </p>
+</form>
+<!-- Search Clients -->
+<form action="/Clients/SearchResults" method="post">
+  <p>
+    <label for="searchTerm">Search Clients</label>
+    <input id="searchTerm" name="searchTerm" type="text">
+    <button type="submit">Search</button>
+  </p>
+</form>
 <!-- Navigation -->
 <p>@Html.ActionLink("View Stylists", "Index", "Stylists")</p>
 <p>@Html.ActionLink("View Clients", "Index", "Clients")</p>
