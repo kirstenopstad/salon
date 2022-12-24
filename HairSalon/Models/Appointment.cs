@@ -3,7 +3,7 @@ namespace HairSalon.Models
   public class Appointment
   {
     // properties
-    public int ApptId {get; set;}
+    public int AppointmentId {get; set;}
     public string DateTime { get; set;}
     // foreign keys
     public int StylistId {get; set;}

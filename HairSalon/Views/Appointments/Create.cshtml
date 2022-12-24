@@ -1,0 +1,36 @@
+@{
+  Layout = "_Layout";
+}
+<h1>Salon</h1>
+<h2>Add New Appointment</h2>
+
+@using HairSalon.Models
+@model HairSalon.Models.Appointment
+<!-- Data -->
+<!-- Form --> 
+<p>NOTE: Appointments may not be added without a stylist & client association. Please ensure both stylist & client are added before proceeding.</p>
+<p>@Html.ActionLink("Add New Stylist", "Create", "Stylists")</p>
+<p>@Html.ActionLink("Add New Client", "Create", "Clients")</p>
+
+
+@using (@Html.BeginForm())
+{
+  <!-- Date Time -->
+  @Html.LabelFor(model => model.DateTime)
+  @Html.TextBoxFor(model => model.DateTime)
+  <br>
+
+  <!-- Client --> 
+  @Html.LabelFor(model => model.Client)
+  @Html.DropDownList("ClientId")
+  <br>
+
+  <!-- Stylist --> 
+  @Html.LabelFor(model => model.Stylist)
+  @Html.DropDownList("StylistId")
+  <br>
+  <!-- Submit -->
+  <input type="submit" value="Add Appouintment"/> 
+}
+<!-- Navigation --> 
+<p>@Html.ActionLink("Back to Client List", "Index")</p>
