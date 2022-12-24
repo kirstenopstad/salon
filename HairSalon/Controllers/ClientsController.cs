@@ -52,5 +52,18 @@ namespace HairSalon.Controllers
       return View(thisClient);
     }
 
+    public ActionResult Search()
+    {
+      return View();
+    }
+
+    [HttpPost]
+    public ActionResult SearchResults(string searchTerm)
+    {
+      List<Client>  searchResults = _db.Clients
+                                        .Where(client => client.FirstName.Contains(searchTerm) == true)
+                                        .ToList();
+      return View(searchResults);
+    }
   }
 }
