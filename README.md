@@ -33,12 +33,12 @@ You've been referred by Pierre to his friend Claire who is the owner of a hair s
 1. Stylists 
   - Index [READ] ✅
   - Details [READ] ✅
-  - Create [UPDATE] ✅
+  - Create [CREATE] ✅
 
 2. Clients 
   - Index [READ] ✅
   - Details [READ] ✅
-  - Create [UPDATE] ✅
+  - Create [CREATE] ✅
 
 #### Naming
 Note: You must follow the naming conventions for your project. Projects that do not follow these conventions will not be reviewed and will be returned not passing.
