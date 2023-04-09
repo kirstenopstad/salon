@@ -1,9 +1,24 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary bg-light">
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #e3f2fd;">
   <div class="container-fluid">
-    <div class="d-flex flex-row mb-3">
-      <div class="p-2">@Html.ActionLink("Salon", "Index", "Home", null, new { @class = "navbar-brand"})</div>
-      <div class="p-2">@Html.ActionLink("Stylists", "Index", "Stylists", null, new { @class = "nav-link"})</div>
-      <div class="p-2">@Html.ActionLink("Clients", "Index", "Clients", null, new { @class = "nav-link"})</div>
+    <!-- Salon Home-->
+    @Html.ActionLink("Salon", "Index", "Home", null, new { @class = "navbar-brand"})
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item p-2">
+          <!-- Stylists -->
+          @Html.ActionLink("Stylists", "Index", "Stylists", null, new { @class = "nav-link"})
+        </li>
+        <li class="nav-item p-2">
+          <!-- Clients -->
+          @Html.ActionLink("Clients", "Index", "Clients", null, new { @class = "nav-link"})
+        </li>
+      </ul>
+      @* <form class="d-flex" role="search"> *@
+        @* <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> *@
+        @* <button class="btn btn-outline-success" type="submit">Search</button> *@
     </div>
   </div>
 </nav>
