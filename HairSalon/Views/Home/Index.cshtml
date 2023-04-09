@@ -1,23 +1,32 @@
 @{
   Layout = "_Layout";
 }
-<h1>Salon</h1>
-<p>Salon is a Fictional Lifestyle Salon featuring Hair Care, Botanical Hair Color, Waxing and Skin Care.</p>
+<img src="~/images/salon.png" alt="Salon logo"/>
+<h1>BRUSH</h1>
+<p>BRUSH is a fictional lifestyle salon featuring Hair Care, Botanical Hair Color, Waxing and Skin Care.</p>
 
-<p>We're not real but we're a steal.</p>
 <!-- Search Stylists -->
-<form action="/Stylists/SearchResults" method="post">
-  <p>
-    <label for="searchTerm">Search Stylists</label>
-    <input id="searchTerm" name="searchTerm" type="text">
-    <button type="submit">Search</button>
+<form action="/Stylists/SearchResults" method="post" class="row g-3">
+    <div class="col-auto">
+      <label for="searchTerm" class="form-control-plaintext">Search Stylists</label>
+    </div>
+    <div class="col-auto">
+      <input id="searchTerm" name="searchTerm" type="text" class="form-control">
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-outline-dark mb-3">Search</button>
+    </div>
   </p>
 </form>
 <!-- Search Clients -->
-<form action="/Clients/SearchResults" method="post">
-  <p>
-    <label for="searchTerm">Search Clients</label>
-    <input id="searchTerm" name="searchTerm" type="text">
-    <button type="submit">Search</button>
-  </p>
+<form action="/Clients/SearchResults" method="post" class="row g-3">
+    <div class="col-auto">
+      <label for="searchTerm" class="form-control-plaintext">Search Clients</label>
+    </div>
+    <div class="col-auto">
+      <input id="searchTerm" name="searchTerm" type="text" class="form-control">
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-outline-dark mb-3">Search</button>
+    </div>
 </form>
