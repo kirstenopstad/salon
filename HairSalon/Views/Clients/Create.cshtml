@@ -14,26 +14,43 @@
 
 @using (@Html.BeginForm())
 {
-  <!-- First Name -->
-  @Html.LabelFor(model => model.FirstName)
-  @Html.TextBoxFor(model => model.FirstName)
-  <br>
-  <!-- Last Name --> 
-  @Html.LabelFor(model => model.LastName)
-  @Html.TextBoxFor(model => model.LastName)
-  <br>
-  <!-- Phone Number --> 
-  @Html.LabelFor(model => model.Phone)
-  @Html.TextBoxFor(model => model.Phone)
-  <br>
-  <!-- Email --> 
-  @Html.LabelFor(model => model.Email)
-  @Html.TextBoxFor(model => model.Email)
-  <br>
+  <div class="mb-3">
+    <!-- First Name -->
+    <label for="firstNameInput" class="form-label">
+    @Html.LabelFor(model => model.FirstName)
+    </label>
+    @Html.TextBoxFor(model => model.FirstName, null , new {@class = "form-control", @placeholder="Jane", @id="firstNameInput"})
+  </div>
+  <div class="mb-3">
+    <!-- Last Name --> 
+    <label for="lastNameInput" class="form-label">
+      @Html.LabelFor(model => model.LastName)
+    </label>
+    @Html.TextBoxFor(model => model.LastName, null , new {@class = "form-control", @placeholder="Doe", @id="lastNameInput"})
+  </div>
+  <div class="mb-3">
+    <!-- Phone Number --> 
+    <label for="phoneInput" class="form-label">
+      @Html.LabelFor(model => model.Phone)
+    </label>
+    @Html.TextBoxFor(model => model.Phone, null , new {@class = "form-control", @placeholder="(###)###-####", @id="phoneInput"})
+    </div>
+  <div class="mb-3">
+    <!-- Email --> 
+    <label for="emailInput" class="form-label">
+      @Html.LabelFor(model => model.Email)
+    </label>
+    @Html.TextBoxFor(model => model.Email, null , new {@class = "form-control", @placeholder="Jane@gmail.com", @id="emailInput"})
+  </div>
+  <div class="mb-3">
   <!-- Stylist --> 
+    <label for="stylistInput" class="form-label">
+      @Html.LabelFor(model => model.Stylist)
+    </label>
+    @Html.DropDownList("StylistId", null, new {@class = "form-select"})
+  </div>
   @Html.LabelFor(model => model.Stylist)
-  @Html.DropDownList("StylistId")
   <br>
   <!-- Submit -->
-  <input type="submit" value="Add Client"/> 
+  <input type="submit" value="Add Client" class="btn btn-outline-dark"/> 
 }

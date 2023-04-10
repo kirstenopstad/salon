@@ -20,14 +20,14 @@
     <label for="specialtyInput" class="form-label">
       @Html.LabelFor(model => model.Specialty) 
     </label>
-    @Html.TextBoxFor(model => model.Specialty, null , new {@class = "form-control", @placeholder="Felicia", @id="specialtyInput"})
+    @Html.TextBoxFor(model => model.Specialty, null , new {@class = "form-control", @placeholder="Long Hair", @id="specialtyInput"})
   </div>
   <div class="mb-3">
     <!-- Bio -->
     <label for="bioInput" class="form-label">
       @Html.LabelFor(model => model.Bio) 
     </label>
-    @Html.TextAreaFor(model => model.Bio, new {@class = "form-control", @placeholder="Felicia", @id="bioInput"})
+    @Html.TextAreaFor(model => model.Bio, new {@class = "form-control", @placeholder="A short bio about the stylist.", @id="bioInput"})
   </div>
 
   <!-- Submit -->
