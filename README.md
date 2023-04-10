@@ -3,6 +3,17 @@
 #### By Kirsten Opstad
 
 #### An MVC web app to manage stylists and clients for a fictional hair salon
+***
+![Brush Hair Salon Logo](HairSalon/wwwroot/images/Salon.png)
+***
+## Description
+
+
+A project demonstrating knowledge of ASP.Net Core 6 MVC & one-to-many relationships. Data is stored in a SQL database with stylists and clients relating in a one-to-many relationship, meaning *one* stylist can have *many* clients, but a client may only have *one* stylist.
+
+![Screenshot of Databases](HairSalon/wwwroot/images/SalonSchemas.png)
+
+*** 
 
 ## Technologies Used
 
@@ -15,32 +26,31 @@
 * MySQL Workbench
 * LINQ
 
-## Description
+***
 
-### Objectives (MVP)
+## Objectives (MVP)
 
-#### Eau Claire's Salon
-You've been referred by Pierre to his friend Claire who is the owner of a hair salon called Eau Claire's Salon. She has contracted you out to create an MVC web application to help her manage her employees (stylists) and their clients. Claire should be able to add a list of stylists working at the salon, and for each stylist, add clients who see that stylist. The stylists have specific specialties, so each client can only see (belong to) a single stylist.
+### Prompt
+You've been referred to the owner of a hair salon called BRUSH Salon. She has contracted you out to create an MVC web application to help her manage her employees (stylists) and their clients. The owner should be able to add a list of stylists working at the salon, and for each stylist, add clients who see that stylist. The stylists have specific specialties, so each client can only see (belong to) a single stylist.
 
-#### User Stories
-  * As the salon owner, I need to be able to see a list of all stylists. ✅
-  * As the salon owner, I need to be able to select a stylist, see their details, and see a list of all clients that belong to that stylist. ✅
-  * As the salon owner, I need to add new stylists to our system when they are hired. ✅
-  * As the salon owner, I need to be able to add new clients to a specific stylist. I should not be able to add a client if no stylists have been added. ✅
+### User Stories
+  * ✅ As the salon owner, I need to be able to see a list of all stylists. 
+  * ✅ As the salon owner, I need to be able to select a stylist, see their details, and see a list of all clients that belong to that stylist. 
+  * ✅ As the salon owner, I need to add new stylists to our system when they are hired. 
+  * ✅ As the salon owner, I need to be able to add new clients to a specific stylist. I should not be able to add a client if no stylists have been added. 
 
 ### Outline
-
 1. Stylists 
-  - Index [READ] ✅
-  - Details [READ] ✅
-  - Create [CREATE] ✅
+  - ✅ Index [READ] 
+  - ✅ Details [READ] 
+  - ✅ Create [CREATE] 
 
 2. Clients 
-  - Index [READ] ✅
-  - Details [READ] ✅
-  - Create [CREATE] ✅
+  - ✅ Index [READ] 
+  - ✅ Details [READ] 
+  - ✅ Create [CREATE] 
 
-#### Naming
+<!-- #### Naming
 Note: You must follow the naming conventions for your project. Projects that do not follow these conventions will not be reviewed and will be returned not passing.
 
 Use your first name and last name to name your database in the following way:
@@ -56,9 +66,9 @@ When you're finished, export the .sql file holding the information from your pro
 Please commit this file with your project in the top level of your solution folder. Again, use your first and last name as the file name following the pattern below:
 
 Production Database: first_last.sql
-If you name your database, project folder, or .sql file incorrectly your project will be sent back to you immediately without being graded.
+If you name your database, project folder, or .sql file incorrectly your project will be sent back to you immediately without being graded. -->
 
-#### Additional Objectives
+### Additional Objectives
 Your code will be reviewed for the following objectives:
 
 * Do the database table and column names follow proper naming conventions?
@@ -70,24 +80,24 @@ Your code will be reviewed for the following objectives:
 * Project is in a polished, portfolio-quality state.
 The prompt’s required functionality and baseline project requirements are in place by the deadline.
 
+***
 
-![Screenshot of Databases](HairSalon/wwwroot/images/SalonSchemas.png)
-
-<!-- [Link to operational site](http://www.kirstenopstad.github.com/<REPOSITORY NAME>) -->
-
-### Goals
-1. Meet MVP ✅
-2. Include a form where employees may search for a stylist by name. ✅
-3. Display a list of all results. ✅
-Include a form where employees may also search for a client by name. Display a list of all results. ✅
+## Goals
+1. ✅ Meet MVP 
+2. ✅ Include a form where employees may search for a stylist by name. 
+    * ✅ Display a list of all results.
+3. ✅ Include a form where employees may also search for a client by name. 
+    * ✅ Display a list of all results. 
 4. Add a feature for adding an appointment to a client.
 5. Add a feature for adding an appointment to a stylist. Add a check to make sure the stylist does not have any conflicting appointments.
 6. Add a feature for keeping track of how much each stylist was paid for each appointment.
-7. Add styling to your page.
+7. 📌 Add styling to your page.
+8. Deploy live site using Azure
 
+***
 ## Setup/Installation Requirements
 
-#### Get copy of MySQL database
+### Get copy of MySQL database
 1. Clone this repo to your workspace.
 2. Open MySQLWorkbench [Click here for instructions to download]
 3. Under Administration Tab, select Data Import/Restore
@@ -98,7 +108,7 @@ Include a form where employees may also search for a client by name. Display a l
   * Select 'Start Import'
 4. You should now have a copy of the **kirsten_opstad** database on your machine.
 
-#### Open project
+### Open project
 1. Navigate to the **HairSalon** directory.
 2. Create a file named `appsettings.json` with the following code. Be sure to update the Default Connection to your MySQL credentials.
 ```
@@ -111,7 +121,7 @@ Include a form where employees may also search for a client by name. Display a l
 3. Install dependencies within the **HairSalon** directory
 ```
 $ dotnet restore
-````
+```
 
 4. To build & run program in development mode 
  ```
@@ -122,19 +132,19 @@ $ dotnet restore
  ```
  dotnet run --launch-profile "production"
  ```
-
+***
 ## Known Bugs
 
 * No known bugs. If you find one, please email me at kirsten.opstad@gmail.com with the subject **[_Repo Name_] Bug** and include:
   * BUG: _A brief description of the bug_
   * FIX: _Suggestion for solution (if you have one!)_
   * If you'd like to be credited, please also include your **_github user profile link_**
-
+***
 ## License
 
 MIT License
 
-Copyright (c) 2022 Kirsten Opstad 
+Copyright (c) 2023 Kirsten Opstad 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
