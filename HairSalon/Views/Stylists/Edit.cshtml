@@ -33,6 +33,12 @@
     @Html.TextAreaFor(model => model.Bio, new {@class = "form-control", @placeholder="A short bio about the stylist.", @id="bioInput"})
   </div>
 
-  <!-- Submit -->
+  <!-- Submit Update Form -->
   <input type="submit" value="Update Stylist Details" class="btn btn-outline-dark"/>
+}
+
+@using (@Html.BeginForm("Delete", "Stylists", routeValues: new { id  = @Model.StylistId}))
+{
+  <!-- Submit Delete Form -->
+  <input type="submit" value="Delete Stylist" class="btn btn-outline-dark"/>
 }
