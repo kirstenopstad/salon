@@ -66,10 +66,10 @@ namespace HairSalon.Controllers
     }
 
     // Delete
+    [HttpPost]
     public ActionResult Delete(int id)
     {
       Stylist thisStylist = _db.Stylists
-                               .Include(stylist => stylist.Clients)
                                .FirstOrDefault(stylist => stylist.StylistId == id);
       _db.Stylists.Remove(thisStylist);
       _db.SaveChanges();
