@@ -44,6 +44,8 @@ You've been referred to the owner of a hair salon called BRUSH Salon. She has co
   - ✅ Index [READ] 
   - ✅ Details [READ] 
   - ✅ Create [CREATE] 
+  - ✅ Edit [UPDATE]
+  - ✅ Delete [DELETE]
 
 2. Clients 
   - ✅ Index [READ] 
