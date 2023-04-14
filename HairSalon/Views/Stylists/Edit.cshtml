@@ -1,0 +1,38 @@
+@{
+  Layout = "_Layout";
+}
+<h1>Salon</h1>
+<h2>Edit Stylist</h2>
+
+@model HairSalon.Models.Stylist
+
+<p>Editing: @Model.Name</p>
+@using (@Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.StylistId)
+
+  <div class="mb-3">
+    <!-- Name -->
+    <label for="nameInput" class="form-label">
+      @Html.LabelFor(model => model.Name) 
+    </label>
+    @Html.TextBoxFor(model => model.Name, null , new {@class = "form-control", @placeholder="Felicia", @id="nameInput"})
+  </div>
+  <div class="mb-3">
+    <!-- Specialty -->
+    <label for="specialtyInput" class="form-label">
+      @Html.LabelFor(model => model.Specialty) 
+    </label>
+    @Html.TextBoxFor(model => model.Specialty, null , new {@class = "form-control", @placeholder="Long Hair", @id="specialtyInput"})
+  </div>
+  <div class="mb-3">
+    <!-- Bio -->
+    <label for="bioInput" class="form-label">
+      @Html.LabelFor(model => model.Bio) 
+    </label>
+    @Html.TextAreaFor(model => model.Bio, new {@class = "form-control", @placeholder="A short bio about the stylist.", @id="bioInput"})
+  </div>
+
+  <!-- Submit -->
+  <input type="submit" value="Update Stylist Details" class="btn btn-outline-dark"/>
+}
