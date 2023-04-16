@@ -26,16 +26,25 @@ namespace HairSalon.Controllers
                                    .Include(appointment => appointment.Stylist)
                                    .Include(appointment => appointment.Client)
                                    .ToList();
+      ViewBag.ClientId = new SelectList(_db.Clients, "ClientId", "Name");
       return View(model);
     }
 
-    public ActionResult Create()
+    // [HttpPost]
+    // public ActionResult AddAppointment(int id) 
+    // {
+    //   // takes in client and redirects to Create appt
+    //   return RedirectToAction("Create", new { id = id})
+
+    // }
+
+    // takes client id as route value
+    public ActionResult Create(int id)
     {
-      // add viewbag to pass in select options
-      // SelectList(data that will populate <option> elements, value, displayed text)
-      ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
-      ViewBag.ClientId = new SelectList(_db.Clients, "ClientId", "FirstName");
-      return View();
+      Client thisClient = _db.Clients
+                             .Include(client => client.Stylist)
+                             .FirstOrDefault(client => client.ClientId == id);
+      return View(thisClient);
     }
 
     [HttpPost]
