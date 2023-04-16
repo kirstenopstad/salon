@@ -4,16 +4,15 @@
 <h1>Salon</h1>
 <h2>Edit Client Details</h2>
 
+<!-- Data -->
 @using HairSalon.Models
 @model HairSalon.Models.Client
-<!-- Data -->
+
 <!-- Form --> 
-<p>NOTE: Clients may not be added without a stylist association. If there are no stylists in drop-down list, add stylist before proceeding.</p>
-<p>@Html.ActionLink("Add New Stylist", "Create", "Stylists")</p>
 
-
-@using (@Html.BeginForm())
+@using (@Html.BeginForm("Edit", "Clients", routeValues: new { id = @Model.ClientId}))
 {
+  @Html.HiddenFor(model => model.ClientId)
   <div class="mb-3">
     <!-- First Name -->
     <label for="firstNameInput" class="form-label">
@@ -51,6 +50,13 @@
   </div>
   @Html.LabelFor(model => model.Stylist)
   <br>
-  <!-- Submit -->
+  <!-- Submit Edit -->
   <input type="submit" value="Update Client Details" class="btn btn-outline-dark"/> 
+}
+
+@using (@Html.BeginForm("Delete", "Clients", routeValues: new { id = @Model.ClientId}))
+{
+  @Html.HiddenFor(model => model.ClientId)
+  <!-- Submit Delete -->
+  <input type="submit" value="Delete Client" class="btn btn-outline-dark"/> 
 }
