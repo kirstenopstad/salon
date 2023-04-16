@@ -12,23 +12,23 @@
 <p>@Html.ActionLink("Add New Stylist", "Create", "Stylists")</p>
 <p>@Html.ActionLink("Add New Client", "Create", "Clients")</p>
 
-
 @using (@Html.BeginForm())
 {
+  <!-- Client --> 
+  @Html.LabelFor(model => model.Client)
+  @Html.HiddenFor(model => model.ClientId)
+  <br>
+
+  <!-- Stylist --> 
+  @Html.LabelFor(model => model.Stylist)
+  @Html.HiddenFor(model => model.StylistId)
+  <br>
+
   <!-- Date Time -->
   @Html.LabelFor(model => model.DateTime)
   @Html.TextBoxFor(model => model.DateTime)
   <br>
 
-  <!-- Client --> 
-  @Html.LabelFor(model => model.Client)
-  @Html.DropDownList("ClientId")
-  <br>
-
-  <!-- Stylist --> 
-  @Html.LabelFor(model => model.Stylist)
-  @Html.DropDownList("StylistId")
-  <br>
   <!-- Submit -->
   <input type="submit" value="Add Appouintment"/> 
 }

@@ -50,7 +50,9 @@ You've been referred to the owner of a hair salon called BRUSH Salon. She has co
 2. Clients 
   - ✅ Index [READ] 
   - ✅ Details [READ] 
-  - ✅ Create [CREATE] 
+  - ✅ Create [CREATE]
+  - ✅ Edit [UPDATE]
+  - ✅ Delete [DELETE]
 
 <!-- #### Naming
 Note: You must follow the naming conventions for your project. Projects that do not follow these conventions will not be reviewed and will be returned not passing.
