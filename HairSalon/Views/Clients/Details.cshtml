@@ -17,4 +17,5 @@
 <p>Stylist: @Model.Stylist.Name</p>
 
 <!-- Navigation --> 
+<p>@Html.ActionLink("Edit Client Details", "Edit", new { id = @Model.ClientId})</p>
 <p>@Html.ActionLink("Back to Client List", "Index")</p>
