@@ -1,3 +1,4 @@
+@using System;
 @{
   Layout = "_Layout";
 }
@@ -5,32 +6,31 @@
 <h2>Add New Appointment</h2>
 
 @using HairSalon.Models
-@model HairSalon.Models.Appointment
-<!-- Data -->
-<!-- Form --> 
-<p>NOTE: Appointments may not be added without a stylist & client association. Please ensure both stylist & client are added before proceeding.</p>
-<p>@Html.ActionLink("Add New Stylist", "Create", "Stylists")</p>
-<p>@Html.ActionLink("Add New Client", "Create", "Clients")</p>
 
+<!-- Data -->
+@model HairSalon.Models.Appointment
+
+<!-- Form --> 
 @using (@Html.BeginForm())
 {
+  <div class="mb-3">
   <!-- Client --> 
-  @Html.LabelFor(model => model.Client)
-  @Html.HiddenFor(model => model.ClientId)
-  <br>
-
-  <!-- Stylist --> 
-  @Html.LabelFor(model => model.Stylist)
-  @Html.HiddenFor(model => model.StylistId)
-  <br>
-
-  <!-- Date Time -->
-  @Html.LabelFor(model => model.DateTime)
-  @Html.TextBoxFor(model => model.DateTime)
-  <br>
+    <label for="stylistInput" class="form-label">
+      @Html.LabelFor(model => model.Client)
+    </label>
+    @Html.DropDownList("ClientId", null, new {@class = "form-select"})
+  </div>
+  <div class="mb-3">
+  <!-- DateTime --> 
+    <label for="stylistInput" class="form-label">
+      @Html.LabelFor(model => model.DateTime)
+    </label>
+    @Html.TextBoxFor(model => model.DateTime, null, new { type="date" })
+    @Html.TextBoxFor(model => model.DateTime, null, new { type="time" })
+  </div>
 
   <!-- Submit -->
-  <input type="submit" value="Add Appouintment"/> 
+  <input type="submit" value="Add Appointment"/> 
 }
 <!-- Navigation --> 
 <p>@Html.ActionLink("Back to Client List", "Index")</p>

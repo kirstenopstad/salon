@@ -1,0 +1,25 @@
+@{
+  Layout = "_Layout";
+}
+<h1>Salon</h1>
+<h2>Add Appointment</h2>
+
+@using HairSalon.Models
+<!-- Data -->
+@model HairSalon.Models.Client
+
+<!-- Form --> 
+@using (@Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.ClientId)
+  <div class="mb-3">
+  <!-- Stylist --> 
+    <label for="dateInput" class="form-label">
+      @Html.Label("Appointment Date")
+    </label>
+    @Html.TextBox("dateInput", new { type="date" })
+  </div>
+  
+  <!-- Submit -->
+  <input type="submit" value="Add Client" class="btn btn-outline-dark"/> 
+}

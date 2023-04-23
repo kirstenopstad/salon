@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 using HairSalon.Models;
 
 namespace HairSalon.Controllers
@@ -26,32 +27,33 @@ namespace HairSalon.Controllers
                                    .Include(appointment => appointment.Stylist)
                                    .Include(appointment => appointment.Client)
                                    .ToList();
-      ViewBag.ClientId = new SelectList(_db.Clients, "ClientId", "Name");
+      //  Get list of clients & pass to view 
+      ViewBag.ClientId = new SelectList(_db.Clients, "ClientId", "FirstName");
       return View(model);
     }
 
-    // [HttpPost]
-    // public ActionResult AddAppointment(int id) 
-    // {
-    //   // takes in client and redirects to Create appt
-    //   return RedirectToAction("Create", new { id = id})
-
-    // }
-
-    // takes client id as route value
     public ActionResult Create(int id)
     {
-      Client thisClient = _db.Clients
-                             .Include(client => client.Stylist)
-                             .FirstOrDefault(client => client.ClientId == id);
-      return View(thisClient);
+      // Client thisClient = _db.Clients
+      //                        .FirstOrDefault(client => client.ClientId == id);
+      ViewBag.ClientId = new SelectList(_db.Clients, "ClientId", "FirstName");
+      return View();
     }
 
     [HttpPost]
+    // public ActionResult Create(Client client, DateTime dateTime)
     public ActionResult Create(Appointment appointment)
     {
+      // get info
+      Client thisClient = _db.Clients.Include(c => c.Stylist)
+                                      .FirstOrDefault(c => c.ClientId == appointment.ClientId);
+      Appointment thisAppointment = new Appointment {
+        ClientId = thisClient.ClientId,
+        StylistId = thisClient.StylistId,
+        DateTime = appointment.DateTime
+      };
       // save to entity
-      _db.Appointments.Add(appointment);
+      _db.Appointments.Add(thisAppointment);
       // save to db
       _db.SaveChanges();
       return RedirectToAction("Index");

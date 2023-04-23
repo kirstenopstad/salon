@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 using HairSalon.Models;
 
 namespace HairSalon.Controllers
@@ -91,5 +92,28 @@ namespace HairSalon.Controllers
                                         .ToList();
       return View(searchResults);
     }
+
+    // public ActionResult AddAppointment(int id)
+    // {
+    //   Client thisClient = _db.Clients
+    //                          .Include(client => client.Stylist)
+    //                          .FirstOrDefault(client => client.ClientId == id);
+    //   return View(thisClient);
+    // }
+
+    // [HttpPost]
+    // public ActionResult AddAppointment(Client client, string DateTime)
+    // {
+    //   // check to see if this client already has an appt scheduled for this time
+    //   #nullable enable
+    //   Appointment? thisAppointment = _db.Appointments.FirstOrDefault(appt => (appt.ClientId == client.ClientId && appt.DateTime == DateTime));
+    //   #nullable disable
+    //   if (thisAppointment == null && DateTime != null) {
+    //     _db.Appointments.Add(new Appointment() {ClientId = client.ClientId, StylistId = client.StylistId, DateTime = DateTime});
+    //     _db.SaveChanges();
+    //   }
+    //   // save to db
+    //   return RedirectToAction("Index");
+    // }
   }
 }

@@ -22,12 +22,22 @@
   @foreach (Appointment appointment in Model)
   {
     <tr>
-      <td>@Model.DateTime</td>
-      <td>@Model.Client</td>
-      <td>@Model.Stylist</td>
+      <td>@appointment.DateTime</td>
+      <td>@appointment.Client.FirstName</td>
+      <td>@appointment.Stylist.Name</td>
     </tr>
   }
   </table>
 }
 
+<!-- To Add Appointment, select Client --> 
+@* @using(@Html.BeginForm()) {
+
+  @Html.Label("Client")
+  @Html.DropDownList("ClientId")
+
+  <input type="submit" value="Add Appointment">
+} *@
+
+<p>@Html.ActionLink("Add", "Create")</p>
 <p>@Html.ActionLink("Back to Main", "Index", "Home")</p>
