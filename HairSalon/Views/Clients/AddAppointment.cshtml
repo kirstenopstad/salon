@@ -1,25 +1,31 @@
+@using System;
 @{
   Layout = "_Layout";
 }
 <h1>Salon</h1>
-<h2>Add Appointment</h2>
+<h2>Add New Appointment</h2>
+<h3>for @ViewBag.Client.FirstName with @ViewBag.Client.Stylist.Name</h3>
 
 @using HairSalon.Models
+
 <!-- Data -->
-@model HairSalon.Models.Client
+@model HairSalon.Models.Appointment
 
 <!-- Form --> 
-@using (@Html.BeginForm())
-{
-  @Html.HiddenFor(model => model.ClientId)
-  <div class="mb-3">
-  <!-- Stylist --> 
-    <label for="dateInput" class="form-label">
-      @Html.Label("Appointment Date")
-    </label>
-    @Html.TextBox("dateInput", new { type="date" })
-  </div>
   
+@using (@Html.BeginForm("Create", "Appointments", new { ClientId = @ViewBag.Client.ClientId}))
+{
+
+  <div class="mb-3">
+  <!-- DateTime --> 
+    <label for="stylistInput" class="form-label">
+      @Html.LabelFor(model => model.DateTime)
+    </label>
+    @Html.TextBoxFor(model => model.DateTime, null, new { type="datetime-local" })
+  </div>
+
   <!-- Submit -->
-  <input type="submit" value="Add Client" class="btn btn-outline-dark"/> 
+  <input type="submit" value="Add Appointment" class="btn btn-outline-dark"/>
 }
+<!-- Navigation --> 
+<p>@Html.ActionLink("Back to Client List", "Index")</p>

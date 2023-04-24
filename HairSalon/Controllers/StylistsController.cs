@@ -91,5 +91,15 @@ namespace HairSalon.Controllers
       // model.Add(searchTerm, searchResults);
       return View(searchResults);
     }
+
+    public ActionResult AddAppointment(int id) 
+    {
+      List<Client>  clients = _db.Clients.Where(client => client.StylistId == id)
+                                        .ToList();
+      ViewBag.ClientId = new SelectList(clients, "ClientId", "FirstName");
+      ViewBag.Stylist = _db.Stylists.FirstOrDefault(s => s.StylistId == id);
+      return View();
+    }
+    
   }
 }

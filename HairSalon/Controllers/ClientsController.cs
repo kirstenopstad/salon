@@ -93,13 +93,13 @@ namespace HairSalon.Controllers
       return View(searchResults);
     }
 
-    // public ActionResult AddAppointment(int id)
-    // {
-    //   Client thisClient = _db.Clients
-    //                          .Include(client => client.Stylist)
-    //                          .FirstOrDefault(client => client.ClientId == id);
-    //   return View(thisClient);
-    // }
+    public ActionResult AddAppointment(int id)
+    {
+      ViewBag.Client = _db.Clients
+                          .Include(client => client.Stylist)
+                          .FirstOrDefault(client => client.ClientId == id);
+      return View();
+    }
 
     // [HttpPost]
     // public ActionResult AddAppointment(Client client, string DateTime)

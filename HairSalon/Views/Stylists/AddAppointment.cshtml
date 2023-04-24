@@ -3,7 +3,8 @@
   Layout = "_Layout";
 }
 <h1>Salon</h1>
-<h2>Add New Appointment</h2>
+<h2>Add New Appointment with @ViewBag.Stylist.Name
+</h2>
 
 @using HairSalon.Models
 
@@ -11,7 +12,7 @@
 @model HairSalon.Models.Appointment
 
 <!-- Form --> 
-@using (@Html.BeginForm())
+@using (@Html.BeginForm("Create", "Appointments"))
 {
   <div class="mb-3">
   <!-- Client --> 
@@ -29,7 +30,7 @@
   </div>
 
   <!-- Submit -->
-  <input type="submit" value="Add Appointment"/> 
+  <input type="submit" value="Add Appointment" class="btn btn-outline-dark"/>
 }
 <!-- Navigation --> 
 <p>@Html.ActionLink("Back to Client List", "Index")</p>

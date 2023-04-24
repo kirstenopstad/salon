@@ -30,14 +30,5 @@
   </table>
 }
 
-<!-- To Add Appointment, select Client --> 
-@* @using(@Html.BeginForm()) {
-
-  @Html.Label("Client")
-  @Html.DropDownList("ClientId")
-
-  <input type="submit" value="Add Appointment">
-} *@
-
-<p>@Html.ActionLink("Add", "Create")</p>
+<p>@Html.ActionLink("Add by Client", "Create")</p>
 <p>@Html.ActionLink("Back to Main", "Index", "Home")</p>
